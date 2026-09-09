@@ -11,6 +11,7 @@ export const portfolio = {
   location: "Jaipur, Rajasthan, India",
   email: "luckyrangi9@gmail.com",
   phone: "+91-7737031870",
+
   linkedin: "https://linkedin.com/in/lucky-rangi-871623256",
   github: "https://github.com/Luckyrangi233",
   kaggle: "https://www.kaggle.com/luckyrangi56",
@@ -19,16 +20,29 @@ export const portfolio = {
 
   hero: {
     eyebrow: "B.Tech Computer Science · 2026",
-    title: "Data. Intelligence. Systems that ship.",
+    title: "AI/ML Engineer building intelligent data-driven systems.",
     description:
-      "I’m a Computer Science graduate working across Data Science, Data Analytics, and AI/ML Engineering — turning messy data into useful insights, predictive models, and deployable systems. I build with Python, SQL, machine learning, APIs, and MLOps, while expanding into Generative AI and agentic systems.",
-    availability: "Open to AI / ML Engineer & Data Scientist opportunities"
+      "I build practical machine learning and data solutions that turn raw data into insights, predictions, and deployable applications. My work spans Python, SQL, Data Science, Machine Learning, APIs, MLOps, and Generative AI — with a focus on building systems that solve real-world problems.",
+    availability:
+      "Open to AI/ML Engineer · Data Scientist · Data Analyst opportunities"
   },
 
   profiles: [
-    { label: "GitHub", href: "https://github.com/Luckyrangi233", note: "Projects & code" },
-    { label: "Kaggle", href: "https://www.kaggle.com/luckyrangi56", note: "Data & notebooks" },
-    { label: "LeetCode", href: "https://leetcode.com/u/luckyop22/", note: "DSA practice" }
+    {
+      label: "GitHub",
+      href: "https://github.com/Luckyrangi233",
+      note: "Projects · Code · MLOps"
+    },
+    {
+      label: "Kaggle",
+      href: "https://www.kaggle.com/luckyrangi56",
+      note: "Data Science · Notebooks"
+    },
+    {
+      label: "LeetCode",
+      href: "https://leetcode.com/u/luckyop22/",
+      note: "DSA · Problem Solving"
+    }
   ],
 
   stats: [
@@ -39,11 +53,61 @@ export const portfolio = {
   ],
 
   skills: [
-    { group: "Programming", items: ["Python", "SQL", "Java", "HTML", "CSS"] },
-    { group: "AI / ML", items: ["Machine Learning", "Predictive Modeling", "Feature Engineering", "EDA", "Classification", "Regression", "Model Evaluation", "Model Deployment"] },
-    { group: "Frameworks", items: ["Pandas", "NumPy", "Scikit-Learn", "XGBoost", "Flask", "FastAPI", "Streamlit", "Matplotlib", "Seaborn"] },
-    { group: "MLOps & Tools", items: ["Docker", "Kubernetes", "MLflow", "Git", "GitHub", "Render", "Jupyter Notebook", "VS Code", "Power BI", "MySQL"] },
-    { group: "GenAI — Foundational", items: ["AI Agent Architectures", "Agent Orchestration Concepts", "LLM Fundamentals", "Prompt Engineering"] }
+    {
+      group: "Programming",
+      items: ["Python", "SQL", "Java", "HTML", "CSS"]
+    },
+    {
+      group: "AI / ML",
+      items: [
+        "Machine Learning",
+        "Predictive Modeling",
+        "Feature Engineering",
+        "EDA",
+        "Classification",
+        "Regression",
+        "Model Evaluation",
+        "Model Deployment"
+      ]
+    },
+    {
+      group: "Frameworks",
+      items: [
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn",
+        "XGBoost",
+        "Flask",
+        "FastAPI",
+        "Streamlit",
+        "Matplotlib",
+        "Seaborn"
+      ]
+    },
+    {
+      group: "MLOps & Tools",
+      items: [
+        "Docker",
+        "Kubernetes",
+        "MLflow",
+        "Git",
+        "GitHub",
+        "Render",
+        "Jupyter Notebook",
+        "VS Code",
+        "Power BI",
+        "MySQL"
+      ]
+    },
+    {
+      group: "GenAI — Foundational",
+      items: [
+        "AI Agent Architectures",
+        "Agent Orchestration Concepts",
+        "LLM Fundamentals",
+        "Prompt Engineering"
+      ]
+    }
   ],
 
   experience: [
@@ -88,16 +152,28 @@ export const portfolio = {
       category: "AI / ML · MLOps",
       description:
         "An end-to-end machine learning pipeline for loan risk prediction, covering preprocessing, feature engineering, class-imbalance handling, evaluation, API inference, containerization, and deployment.",
-      result: "Production-ready inference architecture",
-      stack: ["Python", "XGBoost", "Random Forest", "Flask", "FastAPI", "MLflow", "Docker", "Kubernetes", "Render"],
+      result: "ROC-AUC 0.927 · Production-ready ML architecture",
+      stack: [
+        "Python",
+        "XGBoost",
+        "Random Forest",
+        "Flask",
+        "FastAPI",
+        "MLflow",
+        "Docker",
+        "Kubernetes",
+        "Render"
+      ],
       bullets: [
         "Built an end-to-end ML pipeline using XGBoost and Random Forest on large-scale loan datasets.",
         "Handled preprocessing, feature engineering, class imbalance, and model evaluation using ROC-AUC.",
         "Developed REST APIs with Flask and FastAPI for real-time loan risk prediction.",
         "Containerized the service with Docker and deployed via Kubernetes on Render."
       ],
-      github: "https://github.com/Luckyrangi233"
+      github: "https://github.com/Luckyrangi233/loan-default-predictor",
+      demo: ""
     },
+
     {
       number: "02",
       visual: "physio",
@@ -105,16 +181,25 @@ export const portfolio = {
       category: "Full Stack · Data Visualization",
       description:
         "A case-management platform for treatment tracking and recovery analysis, combining a React frontend with Node.js, Express, and MySQL.",
-      result: "40% less manual reporting",
-      stack: ["React.js", "Node.js", "Express.js", "MySQL", "JWT", "bcrypt"],
+      result: "100+ records · 40% less manual reporting",
+      stack: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "JWT",
+        "bcrypt"
+      ],
       bullets: [
         "Managed 100+ patient records, treatment sessions, and recovery trends.",
         "Built dashboards for pain, mobility, and strength parameters to support data-driven decisions.",
         "Implemented secure JWT and bcrypt authentication.",
         "Optimized SQL queries for patient retrieval with response times under 200ms."
       ],
-      github: "https://github.com/Luckyrangi233"
+      github: "https://github.com/Luckyrangi233/PhysioFriendly-",
+      demo: ""
     },
+
     {
       number: "03",
       visual: "instructor",
@@ -123,13 +208,21 @@ export const portfolio = {
       description:
         "A machine learning project that predicts instructor effectiveness from learner outcomes, engagement, and feedback data.",
       result: "Instructor-level effectiveness scoring",
-      stack: ["Python", "Pandas", "Scikit-Learn", "Random Forest", "EDA"],
+      stack: [
+        "Python",
+        "Pandas",
+        "Scikit-Learn",
+        "Random Forest",
+        "EDA"
+      ],
       bullets: [
         "Performed EDA to identify patterns in learner outcome, engagement, and feedback data.",
         "Created an Instructor Effectiveness Score by aggregating batch-level information to instructor level.",
         "Trained and evaluated a Random Forest classification model using standard metrics."
       ],
-      github: "https://github.com/Luckyrangi233"
+      github:
+        "https://github.com/Luckyrangi233/Instructor_Effectiveness_Modeling",
+      demo: ""
     }
   ],
 
@@ -147,3 +240,4 @@ export const portfolio = {
     "Young Indians Debate Competition — Public Speaking Award (2023)"
   ]
 };
+
