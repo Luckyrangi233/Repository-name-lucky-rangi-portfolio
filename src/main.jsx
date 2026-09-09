@@ -10,12 +10,55 @@ function Arrow() {
 function App() {
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
   }, [dark]);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${form.name}`
+    );
+
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
+
+    window.location.href = `mailto:${p.email}?subject=${subject}&body=${body}`;
+  };
+
+  const educationItems = [
+    {
+      period: "2022 – 2026",
+      title: "B.Tech — Computer Science and Engineering",
+      institution: "Poornima Institute of Engineering and Technology",
+      location: "Jaipur, Rajasthan",
+      result: "CGPA: 7.4 / 10",
+    },
+    {
+      period: "July 2019 – April 2021",
+      title: "Senior Secondary — Class 12 (Science, PCM)",
+      institution: "Government New Building Senior Secondary School",
+      location: "Sirohi, Rajasthan",
+      result: "67.40%",
+    },
+    {
+      period: "Completed Secondary Education",
+      title: "Secondary — Class 10",
+      institution: "Aadarsh Vidha Mandir Senior Secondary School",
+      location: "Sirohi, Rajasthan",
+      result: "",
+    },
+  ];
 
   return (
     <div className="app">
@@ -36,13 +79,18 @@ function App() {
         </button>
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {["about", "experience", "projects", "skills", "contact"].map(
-            (item) => (
-              <a key={item} href={`#${item}`} onClick={closeMenu}>
-                {item}
-              </a>
-            )
-          )}
+          {[
+            "about",
+            "experience",
+            "projects",
+            "skills",
+            "education",
+            "contact",
+          ].map((item) => (
+            <a key={item} href={`#${item}`} onClick={closeMenu}>
+              {item}
+            </a>
+          ))}
 
           <a
             className="nav-resume"
@@ -64,25 +112,45 @@ function App() {
       </header>
 
       <main id="top">
+        {/* HERO */}
         <section className="hero section">
           <div className="hero-copy reveal">
             <div className="eyebrow">
               <span className="pulse" /> {p.hero.eyebrow}
             </div>
 
-            <h1>{p.hero.title}</h1>
-
-            <div className="role-stack">
-              <span>AI / ML Engineer</span>
-              <span>Data Scientist</span>
-              <span>Data Analyst</span>
+            {/* MAIN NAME */}
+            <div className="hero-name">
+              LUCKY RANGI
             </div>
 
-            <p className="hero-text">{p.hero.description}</p>
+            {/* SMALLER PROFESSIONAL ROLES */}
+            <div className="hero-roles">
+              AI/ML Engineer · Data Scientist · Data Analyst
+            </div>
+
+            <div className="role-stack">
+              <span>Machine Learning</span>
+              <span>Data Science</span>
+              <span>Python</span>
+              <span>SQL</span>
+            </div>
+
+            <p className="hero-text">
+              Computer Science graduate with hands-on experience building
+              machine learning models, data-driven applications, REST APIs,
+              and deployable AI/ML systems.
+            </p>
+
+            <p className="hero-text secondary-hero-text">
+              I enjoy solving real-world problems through data, developing
+              practical machine learning solutions, and taking projects from
+              experimentation to deployment using modern engineering tools.
+            </p>
 
             <div className="hero-actions">
               <a className="button primary" href="#projects">
-                Explore my work <Arrow />
+                View Projects <Arrow />
               </a>
 
               <a
@@ -91,13 +159,14 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                View resume
+                Download Resume
               </a>
             </div>
 
             <div className="availability">
               <span className="availability-dot" />
-              {p.hero.availability}
+              Open to AI/ML Engineer · Data Scientist · Data Analyst
+              opportunities
             </div>
 
             <div className="profile-links">
@@ -116,6 +185,7 @@ function App() {
             </div>
           </div>
 
+          {/* HERO VISUAL */}
           <div className="hero-visual reveal delay">
             <div className="orb orb-one" />
             <div className="orb orb-two" />
@@ -180,15 +250,15 @@ function App() {
                 <div className="dashboard-tags">
                   <span>Python</span>
                   <span>SQL</span>
-                  <span>ML</span>
+                  <span>Machine Learning</span>
                   <span>MLOps</span>
-                  <span>GenAI</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* STATS */}
         <section className="stats">
           {p.stats.map((s) => (
             <div className="stat" key={s.label}>
@@ -198,18 +268,28 @@ function App() {
           ))}
         </section>
 
+        {/* ABOUT */}
         <section id="about" className="section split-section">
           <div className="section-label">01 / About</div>
 
           <div className="section-content">
             <h2>
-              Engineering with a <span>practical mindset.</span>
+              Computer Science Engineer with a{" "}
+              <span>practical mindset.</span>
             </h2>
 
             <p className="large-copy">
-              I enjoy taking a machine-learning idea beyond the notebook —
-              from understanding the data and evaluating the model to exposing
-              it through APIs and preparing it for deployment.
+              I am a Computer Science graduate who enjoys building useful
+              software and data-driven solutions. My primary focus is
+              Artificial Intelligence, Machine Learning, Data Science, and
+              problem solving.
+            </p>
+
+            <p className="large-copy">
+              My experience covers the complete development cycle — from
+              understanding raw data and performing EDA to feature
+              engineering, model training, evaluation, API development,
+              containerization, and deployment.
             </p>
 
             <div className="about-grid">
@@ -224,19 +304,26 @@ function App() {
               </div>
 
               <div>
-                <span className="mini-label">Current direction</span>
-                <strong>GenAI · Agentic Systems · Cloud</strong>
+                <span className="mini-label">Primary focus</span>
+                <strong>AI/ML · Data Science · Analytics</strong>
+              </div>
+
+              <div>
+                <span className="mini-label">Programming</span>
+                <strong>Python · SQL · Java</strong>
               </div>
             </div>
           </div>
         </section>
 
+        {/* EXPERIENCE */}
         <section id="experience" className="section split-section">
           <div className="section-label">02 / Experience</div>
 
           <div className="section-content">
             <h2>
-              Where I've <span>learned by building.</span>
+              Experience built through{" "}
+              <span>learning and building.</span>
             </h2>
 
             <div className="timeline">
@@ -250,6 +337,7 @@ function App() {
                   <div className="timeline-head">
                     <div>
                       <h3>{job.role}</h3>
+
                       <p>
                         {job.company} · {job.location}
                       </p>
@@ -269,21 +357,38 @@ function App() {
           </div>
         </section>
 
+        {/* PROJECTS */}
         <section id="projects" className="section projects-section">
-          <div className="section-label">03 / Selected work</div>
+          <div className="section-label">03 / Selected Work</div>
 
           <div className="section-content">
             <h2>
-              Projects that show <span>the full picture.</span>
+              Projects that show{" "}
+              <span>the full picture.</span>
             </h2>
+
+            <p className="large-copy">
+              A selection of projects covering machine learning, data
+              analytics, full-stack development, APIs, and practical
+              problem-solving.
+            </p>
 
             <div className="projects">
               {p.projects.map((project) => (
-                <article className="project-card" key={project.number}>
-                  <div className="project-number">{project.number}</div>
+                <article
+                  className="project-card"
+                  key={project.number}
+                >
+                  <div className="project-number">
+                    {project.number}
+                  </div>
 
-                  <div className={`project-visual ${project.visual}`}>
-                    <div className="visual-label">{project.category}</div>
+                  <div
+                    className={`project-visual ${project.visual}`}
+                  >
+                    <div className="visual-label">
+                      {project.category}
+                    </div>
 
                     <div className="visual-window">
                       {project.visual === "loan" && (
@@ -334,6 +439,33 @@ function App() {
                           </div>
                         </>
                       )}
+
+                      {project.visual === "customer" && (
+                        <>
+                          <div className="customer-clusters">
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                          </div>
+
+                          <div className="mini-bars">
+                            <span />
+                            <span />
+                            <span />
+                            <span />
+                          </div>
+
+                          <div className="visual-stat">
+                            Segments{" "}
+                            <small>Customer Analysis</small>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -346,7 +478,9 @@ function App() {
 
                     <p>{project.description}</p>
 
-                    <div className="result">{project.result}</div>
+                    <div className="result">
+                      {project.result}
+                    </div>
 
                     <div className="chips">
                       {project.stack.map((x) => (
@@ -390,12 +524,14 @@ function App() {
           </div>
         </section>
 
+        {/* SKILLS */}
         <section id="skills" className="section split-section">
           <div className="section-label">04 / Toolkit</div>
 
           <div className="section-content">
             <h2>
-              A toolkit built for <span>shipping.</span>
+              Technical skills built for{" "}
+              <span>real-world projects.</span>
             </h2>
 
             <div className="skill-grid">
@@ -414,56 +550,231 @@ function App() {
           </div>
         </section>
 
-        <section className="section split-section">
+        {/* EDUCATION */}
+        <section id="education" className="section split-section">
           <div className="section-label">05 / Education</div>
 
-          <div className="section-content education-card">
-            <div>
-              <div className="mini-label">
-                {p.education.period}
-              </div>
+          <div className="section-content">
+            <h2>
+              Academic foundation and{" "}
+              <span>continuous learning.</span>
+            </h2>
 
-              <h2>{p.education.degree}</h2>
+            <div className="education-timeline">
+              {educationItems.map((item) => (
+                <article
+                  className="education-item"
+                  key={item.title}
+                >
+                  <div className="education-period">
+                    {item.period}
+                  </div>
 
-              <p>
-                {p.education.institution}
-                <br />
-                {p.education.location}
-              </p>
+                  <div className="education-main">
+                    <h3>{item.title}</h3>
+
+                    <p>
+                      {item.institution}
+                      <br />
+                      {item.location}
+                    </p>
+
+                    {item.result && (
+                      <strong>{item.result}</strong>
+                    )}
+                  </div>
+                </article>
+              ))}
             </div>
 
-            <strong className="grade">{p.education.grade}</strong>
-          </div>
+            <div className="certifications">
+              <h3>Certifications & Achievements</h3>
 
-          <div className="certifications">
-            {p.certifications.map((c) => (
-              <div key={c}>
-                <span>✦</span>
-                {c}
-              </div>
-            ))}
+              {p.certifications.map((c) => (
+                <div key={c}>
+                  <span>✦</span>
+                  {c}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
+        {/* PROFILES */}
+        <section className="section split-section">
+          <div className="section-label">06 / Profiles</div>
+
+          <div className="section-content">
+            <h2>
+              Learn more about my{" "}
+              <span>work and problem solving.</span>
+            </h2>
+
+            <p className="large-copy">
+              I practice consistently to strengthen my programming,
+              problem-solving, data science, and machine learning
+              fundamentals. Explore my profiles and recent work.
+            </p>
+
+            <div className="profile-grid">
+              {p.profiles.map((profile) => (
+                <a
+                  className="profile-card"
+                  key={profile.label}
+                  href={profile.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div>
+                    <span className="mini-label">
+                      {profile.label}
+                    </span>
+
+                    <h3>{profile.note}</h3>
+                  </div>
+
+                  <Arrow />
+                </a>
+              ))}
+
+              <a
+                className="profile-card"
+                href={p.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div>
+                  <span className="mini-label">
+                    LinkedIn
+                  </span>
+
+                  <h3>Professional Profile · Networking</h3>
+                </div>
+
+                <Arrow />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
         <section id="contact" className="contact section">
           <div className="contact-inner">
-            <div className="eyebrow">06 / Let's connect</div>
+            <div className="eyebrow">
+              07 / Let's connect
+            </div>
 
             <h2>
-              Have a problem worth <span>solving?</span>
+              Have a problem worth{" "}
+              <span>solving?</span>
             </h2>
 
             <p>
-              I'm open to opportunities where I can build useful AI/ML
-              systems and keep growing as an engineer.
+              Have a project idea, job opportunity, collaboration,
+              or just want to connect? Send me a message and let's
+              start a conversation.
             </p>
 
-            <a
-              className="button primary big"
-              href={`mailto:${p.email}`}
-            >
-              Start a conversation <Arrow />
-            </a>
+            <div className="contact-layout">
+              <div className="contact-info">
+                <div className="contact-info-item">
+                  <span className="mini-label">Name</span>
+                  <strong>{p.name}</strong>
+                </div>
+
+                <div className="contact-info-item">
+                  <span className="mini-label">Location</span>
+                  <strong>{p.location}</strong>
+                </div>
+
+                <div className="contact-info-item">
+                  <span className="mini-label">Email</span>
+                  <a href={`mailto:${p.email}`}>
+                    {p.email}
+                  </a>
+                </div>
+
+                <div className="contact-info-item">
+                  <span className="mini-label">Phone</span>
+                  <a href={`tel:${p.phone}`}>
+                    {p.phone}
+                  </a>
+                </div>
+
+                <div className="contact-info-item">
+                  <span className="mini-label">Open to</span>
+                  <strong>
+                    AI/ML · Data Science · Data Analytics
+                  </strong>
+                </div>
+              </div>
+
+              <form
+                className="contact-form"
+                onSubmit={handleSubmit}
+              >
+                <label>
+                  <span>Name</span>
+
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        name: e.target.value,
+                      })
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span>Email</span>
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    value={form.email}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        email: e.target.value,
+                      })
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span>Message</span>
+
+                  <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="Tell me about your project, opportunity, or message..."
+                    value={form.message}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        message: e.target.value,
+                      })
+                    }
+                    required
+                  />
+                </label>
+
+                <button
+                  type="submit"
+                  className="button primary big"
+                >
+                  Send Message <Arrow />
+                </button>
+              </form>
+            </div>
 
             <div className="contact-links">
               <a
@@ -511,7 +822,9 @@ function App() {
           © {new Date().getFullYear()} {p.name}
         </span>
 
-        <span>Built with React · Designed for humans</span>
+        <span>
+          Built with React · Designed for humans
+        </span>
       </footer>
     </div>
   );
