@@ -52,59 +52,58 @@ export const portfolio = {
     { value: "40%", label: "Manual reporting reduced" }
   ],
 
- skills: [
-  {
-    group: "Programming",
-    items: ["Python", "SQL", "Java", "HTML", "CSS"]
-  },
-  {
-    group: "Machine Learning",
-    items: [
-      "Machine Learning",
-      "Predictive Modeling",
-      "Feature Engineering",
-      "EDA",
-      "Classification",
-      "Regression",
-      "Model Evaluation",
-      "Scikit-Learn",
-      "XGBoost",
-      "Random Forest"
-    ]
-  },
-  {
-    group: "Data Science & Analytics",
-    items: [
-      "Pandas",
-      "NumPy",
-      "Statistics",
-      "Matplotlib",
-      "Seaborn",
-      "Power BI"
-    ]
-  },
-  {
-    group: "Deployment & MLOps",
-    items: [
-      "Flask",
-      "FastAPI",
-      "Streamlit",
-      "Docker",
-      "Kubernetes",
-      "MLflow",
-      "Git",
-      "GitHub",
-      "Render"
-    ]
-  },
-  {
-    group: "Databases",
-    items: [
-      "MySQL",
-     
-    ]
-  }
-],
+  skills: [
+    {
+      group: "Programming",
+      items: ["Python", "SQL", "Java", "HTML", "CSS"]
+    },
+    {
+      group: "Machine Learning",
+      items: [
+        "Machine Learning",
+        "Predictive Modeling",
+        "Feature Engineering",
+        "EDA",
+        "Classification",
+        "Regression",
+        "Model Evaluation",
+        "Scikit-Learn",
+        "XGBoost",
+        "Random Forest"
+      ]
+    },
+    {
+      group: "Data Science & Analytics",
+      items: [
+        "Pandas",
+        "NumPy",
+        "Statistics",
+        "Matplotlib",
+        "Seaborn",
+        "Power BI"
+      ]
+    },
+    {
+      group: "Deployment & MLOps",
+      items: [
+        "Flask",
+        "FastAPI",
+        "Streamlit",
+        "Docker",
+        "Kubernetes",
+        "MLflow",
+        "Git",
+        "GitHub",
+        "Render"
+      ]
+    },
+    {
+      group: "Databases",
+      items: [
+        "MySQL"
+      ]
+    }
+  ],
 
   experience: [
     {
@@ -141,94 +140,101 @@ export const portfolio = {
   ],
 
   projects: [
-  {
-    number: "01",
-    visual: "loan",
-    title: "Smart Loan Default Prediction System",
-    category: "AI / ML · MLOps",
-    description:
-      "An end-to-end machine learning pipeline for loan risk prediction, covering preprocessing, feature engineering, class-imbalance handling, evaluation, API inference, containerization, and deployment.",
-    result: "ROC-AUC 0.927 · Production-ready ML architecture",
-    stack: [
-      "Python",
-      "XGBoost",
-      "Random Forest",
-      "Flask",
-      "FastAPI",
-      "MLflow",
-      "Docker",
-      "Kubernetes",
-      "Render"
-    ],
-    bullets: [
-      "Built an end-to-end ML pipeline using XGBoost and Random Forest on large-scale loan datasets.",
-      "Handled preprocessing, feature engineering, class imbalance, and model evaluation using ROC-AUC.",
-      "Developed REST APIs with Flask and FastAPI for real-time loan risk prediction.",
-      "Containerized the service with Docker and deployed via Kubernetes on Render."
-    ],
-    github: "https://github.com/Luckyrangi233/loan-default-predictor",
-    demo: ""
-  },
+    {
+      number: "01",
+      visual: "loan",
+      title: "Smart Loan Default Prediction System",
+      category: "AI / ML · MLOps",
+      description:
+        "An end-to-end machine learning pipeline for loan risk prediction, covering preprocessing, feature engineering, class-imbalance handling, evaluation, API inference, containerization, and deployment.",
+      result: "ROC-AUC 0.927 · Production-ready ML architecture",
+      stack: [
+        "Python",
+        "XGBoost",
+        "Random Forest",
+        "Flask",
+        "FastAPI",
+        "MLflow",
+        "Docker",
+        "Kubernetes",
+        "Render"
+      ],
+      bullets: [
+        "Built an end-to-end ML pipeline using XGBoost and Random Forest on large-scale loan datasets.",
+        "Handled preprocessing, feature engineering, class imbalance, and model evaluation using ROC-AUC.",
+        "Developed REST APIs with Flask and FastAPI for real-time loan risk prediction.",
+        "Containerized the service with Docker and deployed via Kubernetes on Render."
+      ],
+      github: "https://github.com/Luckyrangi233/loan-default-predictor",
+      demo: ""
+    },
 
-  {
-    number: "02",
-    visual: "instructor",
-    title: "Instructor Effectiveness Prediction",
-    category: "Machine Learning · Analytics",
-    description:
-      "A machine learning project that predicts instructor effectiveness from learner outcomes, engagement, and feedback data.",
-    result: "Instructor-level effectiveness scoring",
-    stack: [
-      "Python",
-      "Pandas",
-      "Scikit-Learn",
-      "Random Forest",
-      "EDA"
-    ],
-    bullets: [
-      "Performed EDA to identify patterns in learner outcome, engagement, and feedback data.",
-      "Created an Instructor Effectiveness Score by aggregating batch-level information to instructor level.",
-      "Trained and evaluated a Random Forest classification model using standard metrics."
-    ],
-    github:
-      "https://github.com/Luckyrangi233/Instructor_Effectiveness_Modeling",
-    demo: ""
-  },
+    {
+      number: "02",
+      visual: "instructor",
+      title: "Instructor Effectiveness Prediction",
+      category: "Machine Learning · Analytics",
+      description:
+        "A machine learning project that predicts instructor effectiveness from learner outcomes, engagement, and feedback data.",
+      result: "Instructor-level effectiveness scoring",
+      stack: [
+        "Python",
+        "Pandas",
+        "Scikit-Learn",
+        "Random Forest",
+        "EDA"
+      ],
+      bullets: [
+        "Performed EDA to identify patterns in learner outcome, engagement, and feedback data.",
+        "Created an Instructor Effectiveness Score by aggregating batch-level information to instructor level.",
+        "Trained and evaluated a Random Forest classification model using standard metrics."
+      ],
+      github:
+        "https://github.com/Luckyrangi233/Instructor_Effectiveness_Modeling",
+      demo: ""
+    },
 
-  {
-    number: "03",
-    visual: "customer",
-    title: "Customer Segmentation",
-    category: "Machine Learning · Data Analytics",
-    description:
-      "A Python-based customer segmentation project focused on analyzing customer behavior and grouping customers into meaningful segments for data-driven business decisions.",
-    result: "Customer behavior segmentation",
-    stack: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Scikit-Learn",
-      "EDA",
-      "Data Visualization"
-    ],
-    bullets: [
-      "Performed exploratory data analysis to understand customer behavior and purchasing patterns.",
-      "Applied machine learning techniques to identify meaningful customer segments.",
-      "Used data visualization to analyze and communicate differences between customer groups.",
-      "Built the project as a reusable data science workflow for customer analysis."
-    ],
-    github:
-      "https://github.com/Luckyrangi233/customer_segmentation_project",
-    demo: ""
-  }
-],
+    {
+      number: "03",
+      visual: "customer",
+      title: "Customer Segmentation",
+      category: "Machine Learning · Data Analytics",
+      description:
+        "A Python-based customer segmentation project focused on analyzing customer behavior and grouping customers into meaningful segments for data-driven business decisions.",
+      result: "Customer behavior segmentation",
+      stack: [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn",
+        "EDA",
+        "Data Visualization"
+      ],
+      bullets: [
+        "Performed exploratory data analysis to understand customer behavior and purchasing patterns.",
+        "Applied machine learning techniques to identify meaningful customer segments.",
+        "Used data visualization to analyze and communicate differences between customer groups.",
+        "Built the project as a reusable data science workflow for customer analysis."
+      ],
+      github:
+        "https://github.com/Luckyrangi233/customer_segmentation_project",
+      demo: ""
+    }
+  ],
 
   education: {
     degree: "B.Tech, Computer Science and Engineering",
     institution: "Poornima Institute of Engineering and Technology",
     location: "Jaipur, Rajasthan",
     period: "2022 – 2026",
-    grade: "CGPA: 7.4 / 10"
+    grade: "CGPA: 7.4 / 10",
+
+    secondary: {
+      title: "Secondary — Class 10",
+      institution: "Aadarsh Vidha Mandir Senior Secondary School",
+      location: "Sirohi, Rajasthan",
+      grade: "74.83%"
+    }
   },
 
   certifications: [
@@ -237,4 +243,3 @@ export const portfolio = {
     "Young Indians Debate Competition — Public Speaking Award (2023)"
   ]
 };
-
